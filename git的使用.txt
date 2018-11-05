@@ -1,82 +1,82 @@
 
 --------------------------------& GIT  &---------------------------------------------
 
-1.git�Ƿֲ�ʽ�汾����ϵͳ,���ڹ����ֿ���������汾����Ŀ�����ļ�.
+1.git是分布式版本控制系统,用于管理仓库里面各个版本的项目代码文件.
 
-2.�汾�������ֿ�,���Ŀ¼����������ļ������Ա�Git����������,ÿ���ļ����޸� ɾ��,git
-���ܸ���,�Ա��κ�ʱ�̶�����׷����ʷ,�����ڽ���ĳ��ʱ�̿��Ի�ԭ.
+2.版本库又名仓库,这个目录里面的所有文件都可以被Git管理类起来,每个文件的修改 删除,git
+都能跟踪,以便任何时刻都可以追踪历史,或则在将来某个时刻可以还原.
 
-	-2.1 git init    	�ڵ�ǰ�ļ��д���һ���յĲֿ�(�����汾��)
-	-2.2 			���ļ����ӵ��汾��
+	-2.1 git init    	在当前文件夹创建一个空的仓库(创建版本库)
+	-2.2 			把文件添加到版本库
 		
-			     �༭��vim��ʹ��
-		-2.2.1  vim readme.txt          ʹ��xim�༭������һ��readme.txt�ļ�
-		-2.2.2  ��i			����༭ģʽ,��������
-		-2.2.3  ��esc			�˳��༭ģʽ����������ģʽ
-		-2.2.4	:wq			���� :wq  ��ʾ�����˳�
+			     编辑器vim的使用
+		-2.2.1  vim readme.txt          使用xim编辑器创建一个readme.txt文件
+		-2.2.2  按i			进入编辑模式,输入内容
+		-2.2.3  按esc			退出编辑模式进入命令行模式
+		-2.2.4	:wq			输入 :wq  表示保存退出
 
 	
-	-2.3 git add readme.txt		���ļ��ύ���ݴ���
-	-2.4 git commit -m "�汾һ"  	���ļ��ύ���ֿ�
+	-2.3 git add readme.txt		将文件提交至暂存区
+	-2.4 git commit -m "版本一"  	将文件提交至仓库
 	
-	��һ���޸��ļ�������...
+	第一次修改文件内容中...
 
-	-2.11 git status			�鿴��ǰ�ֿ�״̬
-	-2.12 git diff			�鿴�ϴ��޸��ļ�������(��û���ύǰ�鿴��Ч)
-	-2.13 git add readme.txt		���ļ��ύ���ݴ���
-	-2.14 git commit -m "�汾��"	���ļ��ύ���ֿ�
+	-2.11 git status			查看当前仓库状态
+	-2.12 git diff			查看上次修改文件的内容(在没有提交前查看有效)
+	-2.13 git add readme.txt		将文件提交至暂存区
+	-2.14 git commit -m "版本二"	将文件提交至仓库
 	
-	�ڶ����޸��ļ�������...
+	第二次修改文件内容中...
 
-	-2.21 git status			�鿴��ǰ�ֿ�״̬
-	-2.22 git diff			�鿴�ϴ��޸��ļ�������(��û���ύǰ�鿴��Ч)
-	-2.23 git add readme.txt		���ļ��ύ���ݴ���
-	-2.24 git commit -m "�汾��"	���ļ��ύ���ֿ�
+	-2.21 git status			查看当前仓库状态
+	-2.22 git diff			查看上次修改文件的内容(在没有提交前查看有效)
+	-2.23 git add readme.txt		将文件提交至暂存区
+	-2.24 git commit -m "版本三"	将文件提交至仓库
 	
-	-2.31 git log			�鿴�ύ��������־�汾��¼,��汾id �汾�ύʱ���
+	-2.31 git log			查看提交的所有日志版本记录,如版本id 版本提交时间等
 
 	
 
-3. �汾����	���ȣ�Git����֪����ǰ�汾���ĸ��汾,��Git�У���HEAD��ʾָ��,ָ��ǰ�汾��Ҳ�������µ��ύ1094adb...��ע���ҵ��ύID����Ŀ϶���һ��������һ���汾����HEAD^������һ���汾����HEAD^^����Ȼ����100���汾д100��^�Ƚ�������������������д��HEAD~100
+3. 版本回退	首先，Git必须知道当前版本是哪个版本,在Git中，用HEAD表示指针,指向当前版本，也就是最新的提交1094adb...（注意我的提交ID和你的肯定不一样），上一个版本就是HEAD^，上上一个版本就是HEAD^^，当然往上100个版本写100个^比较容易数不过来，所以写成HEAD~100
 	
-	3.1 git reset --hard HEAD^1	��������һ���汾   
-	3.2 git log			��ʾ�ύ��־(���鿴��ǰ�ֿ�İ汾״̬,���м����汾���ڲֿ���,���˰汾���Ժ�,���µİ汾�Ƕ���������)
+	3.1 git reset --hard HEAD^1	回退至上一个版本   
+	3.2 git log			显示提交日志(即查看当前仓库的版本状态,还有几个版本存在仓库中,回退版本了以后,最新的版本们都不存在了)
 	
-	�汾���˳ɹ�,Ҫ���л������µİ汾,��Ҫ�ҵ��汾id��...�����һص����汾,�������ҵ�id��
+	版本回退成功,要想切换回最新的版本,需要找到版本id号...比如找回第三版本,往上拉找到id号
 
-	3.3 git reset --hard 0f46707827fe8d09		����ǰ�汾�л��ص����汾
+	3.3 git reset --hard 0f46707827fe8d09		将当前版本切换回第三版本
 		    
-	����������Ҳ����汾��id��,��ô���� git reflog �鿴ÿ�����������,�Ϳ����ҵ���Ӧ�İ汾id��
+	如果往上拉找不到版本的id号,那么就用 git reflog 查看每次输入的命令,就可以找到对应的版本id了
 
-	3.4 git reflog			�鿴��ʷ����,�鿴�汾id��
+	3.4 git reflog			查看历史命令,查看版本id号
 	
 	
-4.������: ���ǵ�ǰ�ļ�Ŀ¼��
-  �汾��: ���ǹ������е�����Ŀ¼ .git 
-  �ݴ���: �����ڰ汾����� index �ļ�		
+4.工作区: 就是当前文件目录下
+  版本库: 就是工作区中的隐藏目录 .git 
+  暂存区: 存在于版本库里的 index 文件		
 
-	4.1 cat readme.txt		�鿴��־�ļ�
-	4.2 ls -a			��ʾ�����ļ�(���������ļ�)
+	4.1 cat readme.txt		查看日志文件
+	4.2 ls -a			显示所有文件(包括隐藏文件)
 		
 
-5.Զ�ֿ̲�
+5.远程仓库
 
-  �Ƚ������زֿ�,Ȼ�󽫱��زֿ�������Զ�ֿ̲��:
+  先建立本地仓库,然后将本地仓库推送至远程仓库库（远程仓库已经建好的情况下）:
 	
-	5.1 git remote add origin https://github.com/ka98k/trygit.git		�����زֿ���github�Ĳֿ��������
+	5.1 git remote add origin1 git@github.com:ka98k/Use-for-Git.git		将本地仓库与github的仓库关联起来
 
-	5.2 git push -u origin master		����������������Github�ֿ�
+	5.2 git push -u origin1 master		将本地内容推送至Github仓库
 
-	��ʱ,Զ�ֿ̲�����־��� origin  �ѱ��زֿ������������Զ��,ʵ�����ǰѵ�ǰ��֧ master ������Զ��...
+	此时,远程仓库的名字就是 origin  把本地仓库的内容推送至远程,实际上是把当前分支 master 推送至远程...
 	
-	5.3 git push origin master	������ master ��֧�������޸������� GitHub ,����,���ӵ���������ķֲ�ʽ�汾��
+	5.3 git push origin master	将本地 master 分支的最新修改推送至 GitHub ,至此,你就拥有了真正的分布式版本库
 
   
- �Ƚ���Զ�ֿ̲�,Ȼ��Զ�ֿ̲��¡�����زֿ���:
+ 先建立远程仓库,然后将远程仓库克隆到本地仓库中:
 	
-	5.4 ����Զ�ֿ̲�github���½�һ����Ŀ 
+	5.4 先在远程仓库github中新建一个项目 
 	
-	5.5 git clone git@github.com:ka98k/Trygit2.git		��Զ�ֿ̲����ݿ�¡����ǰ�ļ���
+	5.5 git clone git@github.com:ka98k/Trygit2.git		将远程仓库内容克隆至当前文件夹
 
 	
 	
